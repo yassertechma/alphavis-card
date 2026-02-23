@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALPHA VIS - Mouhib Yassine</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+--blue:#2f49c7;
+--blue2:#6f73ff;
+--bg:#f4f6fb;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter;background:var(--bg);}
+
+/* ================= SPLASH ================= */
+.splash{
+position:fixed;
+inset:0;
+background:#fff;
+z-index:99999;
+overflow:hidden;
+}
+
+.splash-bg{
+width:100%;
+height:100%;
+object-fit:cover;
+transform:translateY(100%);
+animation:slideUp 1.2s ease-out forwards;
+}
+
+.splash-center{
+position:absolute;
+inset:0;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:20px;
+}
+
+.splash-logo{
+width:110px;
+background:#fff;
+padding:10px;
+border-radius:50%;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.spinner{
+width:45px;
+height:45px;
+border:4px solid rgba(255,255,255,0.5);
+border-top:4px solid #fff;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes slideUp{
+to{transform:translateY(0);}
+}
+
+@keyframes spin{
+to{transform:rotate(360deg);}
+}
+
+.splash.fade-out{
+animation:fadeOut .6s forwards;
+}
+
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden;}
+}
+
+/* ================= CARD ================= */
+.wrap{
+display:flex;
+justify-content:center;
+padding:40px 15px;
+}
+
+.card{
+width:900px;
+max-width:100%;
+background:#fff;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hero{
+background:var(--blue);
+padding:30px;
+display:flex;
+align-items:center;
+gap:20px;
+color:#fff;
+}
+
+.logo{
+width:80px;
+height:80px;
+border-radius:50%;
+background:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+
+.logo img{width:70%;}
+
+.body{padding:25px;}
+
+.download{
+display:block;
+width:100%;
+background:var(--blue2);
+color:#fff;
+padding:13px;
+text-align:center;
+border-radius:10px;
+font-weight:800;
+text-decoration:none;
+margin-bottom:12px;
+}
+
+.whatsapp{
+display:block;
+width:100%;
+background:#25D366;
+color:#fff;
+padding:13px;
+text-align:center;
+border-radius:10px;
+font-weight:800;
+text-decoration:none;
+margin-bottom:20px;
+}
+
+.bio{
+background:#eef1ff;
+padding:15px;
+border-left:4px solid var(--blue);
+border-radius:10px;
+margin-bottom:20px;
+font-weight:600;
+line-height:1.6;
+}
+
+.row{margin-bottom:15px;}
+
+.label{font-weight:700;color:#555;margin-bottom:5px;}
+
+.value a{color:#8b2bd6;text-decoration:none;font-weight:700;}
+
+.map-btn{
+margin-top:10px;
+padding:10px 15px;
+background:#fff;
+border:1px solid var(--blue);
+color:var(--blue);
+font-weight:800;
+border-radius:8px;
+cursor:pointer;
+}
+
+.footer{
+text-align:center;
+padding:20px;
+border-top:1px solid #eee;
+}
+
+.footer a{
+margin:0 10px;
+font-size:22px;
+color:#555;
+}
+
+.footer a:hover{color:var(--blue);}
+</style>
+</head>
+
+<body>
+
+<!-- SPLASH -->
+<div id="splash" class="splash">
+<img src="slide1.png" class="splash-bg">
+<div class="splash-center">
+<img src="logo-alpha.jpg" class="splash-logo">
+<div class="spinner"></div>
+</div>
+</div>
+
+<div class="wrap">
+<div class="card">
+
+<div class="hero">
+<div class="logo">
+<img src="logo-alpha.jpg">
+</div>
+<div>
+<h2>Mouhib Yassine</h2>
+<p>Visserie & Outillage</p>
+<strong>ALPHA VIS</strong>
+</div>
+</div>
+
+<div class="body">
+
+<a href="ALPHA_VIS_Yassine_Mouhib.vcf" download class="download">
+Enregister Contact
+</a>
+
+<a class="whatsapp" href="https://wa.me/212673503322" target="_blank">
+<i class="fab fa-whatsapp"></i> Contacter sur WhatsApp
+</a>
+
+<div class="bio">
+Spécialiste en visserie et outillage professionnels.<br>
+Des solutions industrielles fiables, durables et de haute qualité.<br>
+Engagement, précision et performance.
+</div>
+
+<div class="row">
+<div class="label">Téléphone</div>
+<div class="value">
+<a href="tel:+212673503322">+212673503322</a>
+</div>
+</div>
+
+<div class="row">
+<div class="label">Email</div>
+<div class="value">
+<a href="mailto:alphavis.ma@gmail.com">alphavis.ma@gmail.com</a>
+</div>
+</div>
+
+<div class="row">
+<div class="label">Site</div>
+<div class="value">
+<a href="http://alphavis.ma" target="_blank">alphavis.ma</a>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-tiktok"></i></a>
+</div>
+
+</div>
+</div>
+
+<script>
+window.addEventListener("load",function(){
+const splash=document.getElementById("splash");
+setTimeout(()=>{
+splash.classList.add("fade-out");
+setTimeout(()=>{splash.remove();},600);
+},3000);
+});
+</script>
+
+</body>
+</html>
