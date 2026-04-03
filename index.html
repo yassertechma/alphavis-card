@@ -1,274 +1,417 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALPHA VIS - Mouhib Yassine</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2f49c7" />
+  <meta name="description" content="Carte de visite digitale ALPHA VIS - Mouhib Yassine" />
+  <title>ALPHA VIS - Mouhib Yassine</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-<style>
-:root{
---blue:#2f49c7;
---blue2:#6f73ff;
---bg:#f4f6fb;
-}
+  <style>
+    :root {
+      --blue: #2f49c7;
+      --blue2: #6f73ff;
+      --bg: #f4f6fb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --success: #25d366;
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      --radius: 18px;
+    }
 
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter;background:var(--bg);}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* ================= SPLASH ================= */
-.splash{
-position:fixed;
-inset:0;
-background:#fff;
-z-index:99999;
-overflow:hidden;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.splash-bg{
-width:100%;
-height:100%;
-object-fit:cover;
-transform:translateY(100%);
-animation:slideUp 1.2s ease-out forwards;
-}
+    body {
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
 
-.splash-center{
-position:absolute;
-inset:0;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:20px;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-.splash-logo{
-width:110px;
-background:#fff;
-padding:10px;
-border-radius:50%;
-box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
+    a {
+      text-decoration: none;
+    }
 
-.spinner{
-width:45px;
-height:45px;
-border:4px solid rgba(255,255,255,0.5);
-border-top:4px solid #fff;
-border-radius:50%;
-animation:spin 1s linear infinite;
-}
+    .splash {
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      z-index: 99999;
+      overflow: hidden;
+    }
 
-@keyframes slideUp{
-to{transform:translateY(0);}
-}
+    .splash-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translateY(100%);
+      animation: slideUp 1.2s ease-out forwards;
+    }
 
-@keyframes spin{
-to{transform:rotate(360deg);}
-}
+    .splash-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: rgba(0, 0, 0, 0.15);
+      padding: 20px;
+    }
 
-.splash.fade-out{
-animation:fadeOut .6s forwards;
-}
+    .splash-logo {
+      width: 110px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
 
-@keyframes fadeOut{
-to{opacity:0;visibility:hidden;}
-}
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid rgba(255, 255, 255, 0.45);
+      border-top: 4px solid #fff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
 
-/* ================= CARD ================= */
-.wrap{
-display:flex;
-justify-content:center;
-padding:40px 15px;
-}
+    .splash.fade-out {
+      animation: fadeOut 0.6s forwards;
+    }
 
-.card{
-width:900px;
-max-width:100%;
-background:#fff;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
+    .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 14px;
+    }
 
-.hero{
-background:var(--blue);
-padding:30px;
-display:flex;
-align-items:center;
-gap:20px;
-color:#fff;
-}
+    .card {
+      width: 920px;
+      max-width: 100%;
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
 
-.logo{
-width:80px;
-height:80px;
-border-radius:50%;
-background:#fff;
-display:flex;
-align-items:center;
-justify-content:center;
-overflow:hidden;
-}
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue2) 100%);
+      padding: 32px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #fff;
+    }
 
-.logo img{width:70%;}
+    .logo {
+      width: 90px;
+      height: 90px;
+      flex: 0 0 90px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
 
-.body{padding:25px;}
+    .logo img {
+      width: 72%;
+      height: auto;
+    }
 
-.download{
-display:block;
-width:100%;
-background:var(--blue2);
-color:#fff;
-padding:13px;
-text-align:center;
-border-radius:10px;
-font-weight:800;
-text-decoration:none;
-margin-bottom:12px;
-}
+    .hero h1 {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
 
-.whatsapp{
-display:block;
-width:100%;
-background:#25D366;
-color:#fff;
-padding:13px;
-text-align:center;
-border-radius:10px;
-font-weight:800;
-text-decoration:none;
-margin-bottom:20px;
-}
+    .hero p {
+      font-size: 1rem;
+      opacity: 0.95;
+      margin-bottom: 6px;
+    }
 
-.bio{
-background:#eef1ff;
-padding:15px;
-border-left:4px solid var(--blue);
-border-radius:10px;
-margin-bottom:20px;
-font-weight:600;
-line-height:1.6;
-}
+    .hero strong {
+      display: inline-block;
+      letter-spacing: 0.08em;
+    }
 
-.row{margin-bottom:15px;}
+    .body {
+      padding: 28px;
+    }
 
-.label{font-weight:700;color:#555;margin-bottom:5px;}
+    .actions {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
 
-.value a{color:#8b2bd6;text-decoration:none;font-weight:700;}
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      color: #fff;
+      padding: 14px 18px;
+      text-align: center;
+      border-radius: 12px;
+      font-weight: 800;
+      border: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
 
-.map-btn{
-margin-top:10px;
-padding:10px 15px;
-background:#fff;
-border:1px solid var(--blue);
-color:var(--blue);
-font-weight:800;
-border-radius:8px;
-cursor:pointer;
-}
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
 
-.footer{
-text-align:center;
-padding:20px;
-border-top:1px solid #eee;
-}
+    .btn:active {
+      transform: translateY(0);
+    }
 
-.footer a{
-margin:0 10px;
-font-size:22px;
-color:#555;
-}
+    .btn-download {
+      background: var(--blue2);
+    }
 
-.footer a:hover{color:var(--blue);}
-</style>
+    .btn-whatsapp {
+      background: var(--success);
+    }
+
+    .bio {
+      background: #eef1ff;
+      padding: 16px;
+      border-left: 4px solid var(--blue);
+      border-radius: 12px;
+      margin-bottom: 22px;
+      font-weight: 600;
+      line-height: 1.7;
+      color: #26324d;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .row {
+      background: #f8faff;
+      border: 1px solid #e8ecf8;
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .label {
+      font-weight: 800;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .value,
+    .value a {
+      color: #6120bb;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 22px;
+      border-top: 1px solid #edf0f5;
+      background: #fcfdff;
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #4b5563;
+      background: #f2f5fb;
+      border: 1px solid #e5eaf3;
+      font-size: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .social-link:hover {
+      color: var(--blue);
+      background: #eaf0ff;
+      border-color: #d8e1ff;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 24px 20px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .body {
+        padding: 20px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div id="splash" class="splash" aria-hidden="true">
+    <img src="slide1.png" class="splash-bg" alt="ALPHA VIS background" />
+    <div class="splash-center">
+      <img src="logo-alpha.jpg" class="splash-logo" alt="Logo ALPHA VIS" />
+      <div class="spinner" aria-label="Chargement"></div>
+    </div>
+  </div>
 
-<!-- SPLASH -->
-<div id="splash" class="splash">
-<img src="slide1.png" class="splash-bg">
-<div class="splash-center">
-<img src="logo-alpha.jpg" class="splash-logo">
-<div class="spinner"></div>
-</div>
-</div>
+  <main class="wrap">
+    <section class="card" aria-label="Carte de visite ALPHA VIS">
+      <header class="hero">
+        <div class="logo">
+          <img src="logo-alpha.jpg" alt="Logo ALPHA VIS" />
+        </div>
+        <div>
+          <h1>Mouhib Yassine</h1>
+          <p>Visserie &amp; Outillage</p>
+          <strong>ALPHA VIS</strong>
+        </div>
+      </header>
 
-<div class="wrap">
-<div class="card">
+      <div class="body">
+        <div class="actions">
+          <a href="ALPHA_VIS_Yassine_Mouhib.vcf" download class="btn btn-download">
+            <i class="fa-solid fa-address-card"></i>
+            Enregistrer le contact
+          </a>
 
-<div class="hero">
-<div class="logo">
-<img src="logo-alpha.jpg">
-</div>
-<div>
-<h2>Mouhib Yassine</h2>
-<p>Visserie & Outillage</p>
-<strong>ALPHA VIS</strong>
-</div>
-</div>
+          <a class="btn btn-whatsapp" href="https://wa.me/212673503322" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            Contacter sur WhatsApp
+          </a>
+        </div>
 
-<div class="body">
+        <div class="bio">
+          Spécialiste en visserie et outillage professionnels.<br />
+          Des solutions industrielles fiables, durables et de haute qualité.<br />
+          Engagement, précision et performance.
+        </div>
 
-<a href="ALPHA_VIS_Yassine_Mouhib.vcf" download class="download">
-Enregister Contact
-</a>
+        <div class="info-grid">
+          <div class="row">
+            <div class="label">Téléphone</div>
+            <div class="value">
+              <a href="tel:+212673503322">+212 673 503 322</a>
+            </div>
+          </div>
 
-<a class="whatsapp" href="https://wa.me/212673503322" target="_blank">
-<i class="fab fa-whatsapp"></i> Contacter sur WhatsApp
-</a>
+          <div class="row">
+            <div class="label">Email</div>
+            <div class="value">
+              <a href="mailto:alphavis.ma@gmail.com">alphavis.ma@gmail.com</a>
+            </div>
+          </div>
 
-<div class="bio">
-Spécialiste en visserie et outillage professionnels.<br>
-Des solutions industrielles fiables, durables et de haute qualité.<br>
-Engagement, précision et performance.
-</div>
+          <div class="row">
+            <div class="label">Site web</div>
+            <div class="value">
+              <a href="https://alphavis.ma" target="_blank" rel="noopener noreferrer">alphavis.ma</a>
+            </div>
+          </div>
 
-<div class="row">
-<div class="label">Téléphone</div>
-<div class="value">
-<a href="tel:+212673503322">+212673503322</a>
-</div>
-</div>
+          <div class="row">
+            <div class="label">vCard</div>
+            <div class="value">
+              <a href="ALPHA_VIS_Yassine_Mouhib.vcf" download>Télécharger le contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<div class="row">
-<div class="label">Email</div>
-<div class="value">
-<a href="mailto:alphavis.ma@gmail.com">alphavis.ma@gmail.com</a>
-</div>
-</div>
+      <footer class="footer">
+        <div class="socials">
+          <a class="social-link" href="https://www.facebook.com/alphavis.ma" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a class="social-link" href="https://www.instagram.com/alphavis.ma" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a class="social-link" href="https://www.tiktok.com/@alphavis8" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </footer>
+    </section>
+  </main>
 
-<div class="row">
-<div class="label">Site</div>
-<div class="value">
-<a href="http://alphavis.ma" target="_blank">alphavis.ma</a>
-</div>
-</div>
+  <script>
+    window.addEventListener("load", function () {
+      const splash = document.getElementById("splash");
+      if (!splash) return;
 
-</div>
-
-<div class="footer">
-<a href="#"><i class="https://www.facebook.com/alphavis.ma"></i></a>
-<a href="#"><i class="https://www.instagram.com/alphavis.ma"></i></a>
-<a href="#"><i class="https://www.tiktok.com/@alphavis8"></i></a>
-</div>
-
-</div>
-</div>
-
-<script>
-window.addEventListener("load",function(){
-const splash=document.getElementById("splash");
-setTimeout(()=>{
-splash.classList.add("fade-out");
-setTimeout(()=>{splash.remove();},600);
-},3000);
-});
-</script>
-
+      setTimeout(() => {
+        splash.classList.add("fade-out");
+        setTimeout(() => splash.remove(), 600);
+      }, 2200);
+    });
+  </script>
 </body>
 </html>
