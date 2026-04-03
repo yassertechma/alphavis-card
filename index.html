@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
     :root {
@@ -31,9 +30,7 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: "Inter", sans-serif;
@@ -47,9 +44,7 @@
       display: block;
     }
 
-    a {
-      text-decoration: none;
-    }
+    a { text-decoration: none; }
 
     .splash {
       position: fixed;
@@ -183,16 +178,12 @@
       border-radius: 12px;
       font-weight: 800;
       border: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .btn:hover {
       transform: translateY(-1px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .btn:active {
-      transform: translateY(0);
     }
 
     .btn-download {
@@ -201,6 +192,13 @@
 
     .btn-whatsapp {
       background: var(--success);
+    }
+
+    .btn svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+      flex: 0 0 auto;
     }
 
     .bio {
@@ -267,8 +265,13 @@
       color: #4b5563;
       background: #f2f5fb;
       border: 1px solid #e5eaf3;
-      font-size: 20px;
       transition: all 0.2s ease;
+    }
+
+    .social-link svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
     }
 
     .social-link:hover {
@@ -295,15 +298,11 @@
     }
 
     @keyframes slideUp {
-      to {
-        transform: translateY(0);
-      }
+      to { transform: translateY(0); }
     }
 
     @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
+      to { transform: rotate(360deg); }
     }
 
     @keyframes fadeOut {
@@ -339,13 +338,18 @@
       <div class="body">
         <div class="actions">
           <a href="ALPHA_VIS_Yassine_Mouhib.vcf" download class="btn btn-download">
-            <i class="fa-solid fa-address-card"></i>
-            Enregistrer le contact
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7l-2-4zm-5 15-4-4h2.5v-3h3v3H16l-4 4zm4-11H8V5h8v2z"/>
+            </svg>
+            <span>Enregistrer le contact</span>
           </a>
 
           <a class="btn btn-whatsapp" href="https://wa.me/212673503322" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-whatsapp"></i>
-            Contacter sur WhatsApp
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M19.11 17.21c-.28-.14-1.66-.82-1.92-.91-.26-.09-.45-.14-.64.14-.18.28-.73.91-.89 1.1-.16.18-.33.21-.61.07-.28-.14-1.2-.44-2.28-1.4-.84-.75-1.41-1.67-1.57-1.95-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.18.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.33 0 1.38 1.01 2.71 1.15 2.89.14.18 1.97 3.01 4.77 4.22.67.29 1.2.47 1.61.6.68.22 1.29.19 1.78.12.54-.08 1.66-.68 1.9-1.34.23-.66.23-1.22.16-1.34-.07-.12-.26-.19-.54-.33z"/>
+              <path d="M16.02 3.2c-7.08 0-12.82 5.74-12.82 12.82 0 2.25.58 4.45 1.69 6.39L3 29l6.76-1.77a12.79 12.79 0 0 0 6.26 1.62h.01c7.08 0 12.82-5.74 12.82-12.82 0-3.43-1.34-6.65-3.77-9.07A12.73 12.73 0 0 0 16.02 3.2zm0 23.49h-.01a10.6 10.6 0 0 1-5.4-1.47l-.39-.23-4.01 1.05 1.07-3.91-.25-.4a10.63 10.63 0 1 1 8.99 4.96z"/>
+            </svg>
+            <span>Contacter sur WhatsApp</span>
           </a>
         </div>
 
@@ -389,13 +393,21 @@
       <footer class="footer">
         <div class="socials">
           <a class="social-link" href="https://www.facebook.com/alphavis.ma" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.87.24-1.46 1.49-1.46H16.7V3.96c-.31-.04-1.38-.12-2.63-.12-2.6 0-4.38 1.58-4.38 4.49V10H6.75v3h2.94v8h3.81z"/>
+            </svg>
           </a>
+
           <a class="social-link" href="https://www.instagram.com/alphavis.ma" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5zm8.95 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zM12 6.86A5.14 5.14 0 1 1 6.86 12 5.14 5.14 0 0 1 12 6.86zm0 1.8A3.34 3.34 0 1 0 15.34 12 3.34 3.34 0 0 0 12 8.66z"/>
+            </svg>
           </a>
+
           <a class="social-link" href="https://www.tiktok.com/@alphavis8" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-            <i class="fab fa-tiktok"></i>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.88 3c.18 1.54 1.06 2.95 2.39 3.78a5.8 5.8 0 0 0 3.08.9v3.1a8.85 8.85 0 0 1-2.93-.5v5.57a6.85 6.85 0 1 1-5.91-6.79v3.2a3.7 3.7 0 1 0 2.22 3.39V3h3.15z"/>
+            </svg>
           </a>
         </div>
       </footer>
